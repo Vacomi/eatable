@@ -10,7 +10,7 @@ import { SessionService } from 'src/app/services/session.service';
 })
 export class ProfileComponent implements OnInit {
   constructor(private router: Router, private service:SessionService){}
-
+  update = true;
   user: User = {
     name : 'sin nombre',
     email : '',
@@ -19,7 +19,8 @@ export class ProfileComponent implements OnInit {
   }
 
   ngOnInit(): void {
-
+    // this.update = false;
+    console.log(this.update)
     this.service.showuser(sessionStorage.getItem("id")).subscribe( (data: any) => {
       if(data.name) {  this.user.name = data.name }
       if(data.email) {  this.user.email = data.email }
@@ -27,7 +28,19 @@ export class ProfileComponent implements OnInit {
       if(data.address) {  this.user.address = data.address }
     })
   }
-
+  back() {
+    console.log('ingresamos al bak');
+    
+    if(this.update) {
+      console.log('back');
+    }else {
+      this.update = true;
+    }
+  }
+  actualizar() {
+    this.update = !this.update;
+    console.log(this.update);
+  } 
   logout(){
     sessionStorage.removeItem("Token");
     sessionStorage.removeItem("id");

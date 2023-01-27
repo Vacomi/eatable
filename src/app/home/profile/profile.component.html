@@ -5,16 +5,17 @@
         <div class="container__nav">
             <div class="container__title">
                 <h5 class="text-center card-title fw-bold">My Profile</h5>
-                <a class="btn__left"><i class="bi bi-chevron-left"></i></a>
+                <a class="btn__left"><i class="bi bi-chevron-left" (click)="back()"></i></a>
             </div>
         </div>
 
+        <aside *ngIf="update;else up">
         <div class="container__subtitle d-flex justify-content-between">
             <h2 class="subtitle">Personal details</h2>
-            <button class="btn__change">change</button>
+            <button class="btn__change" (click)="actualizar()">change</button>
         </div>
 
-        <div class="container__form">
+        <div class="container__form" >
             <div class="container__data">
                 <input type="text" class="input_name fw-bold" disabled placeholder="sin nombre" [value]="user.name">
                 <div class="container__group">
@@ -34,5 +35,38 @@
                 <button (click)="logout()" class="btn__update">Logout</button>
             </div>
         </div>
+    </aside>
+
+        <ng-template #up>
+            <h2 class="subtitle">Update personal details</h2>
+            <form class="container__form">
+                <div class="container__data">
+                    <div class="mb-1 container__group">
+                        <input type="text" class="input__text" id="name" placeholder=" ">
+                        <label for="name" class="label">Name</label>
+                    </div>
+                
+                    <div class="mb-1 container__group">
+                        <input type="email" class="input__text" id="email" placeholder=" ">
+                        <label for="email" class="label">Email</label>
+                    </div>
+            
+                    <div class="mb-1 container__group">
+                        <input type="number" class="input__text" id="phone" placeholder=" ">
+                        <label for="phone" class="label">Phone</label>
+                    </div>
+            
+                    <div class="mb-1 container__group">
+                        <input type="text" class="input__text input__address" id="address" placeholder=" ">
+                        <label for="address" class="label">Address</label>
+                    </div>
+                </div>
+            
+                <div class="">
+                    <button class="btn__update">Update</button>
+                 </div>
+            </form>
+        </ng-template>
+
 </article>
 </section>
