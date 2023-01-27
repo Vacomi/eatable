@@ -1,0 +1,38 @@
+
+<section class="card">
+    <article class="card-body">
+        
+        <div class="container__nav">
+            <div class="container__title">
+                <h5 class="text-center card-title fw-bold">My Profile</h5>
+                <a class="btn__left"><i class="bi bi-chevron-left"></i></a>
+            </div>
+        </div>
+
+        <div class="container__subtitle d-flex justify-content-between">
+            <h2 class="subtitle">Personal details</h2>
+            <button class="btn__change">change</button>
+        </div>
+
+        <div class="container__form">
+            <div class="container__data">
+                <input type="text" class="input_name fw-bold" disabled placeholder="sin nombre" [value]="user.name">
+                <div class="container__group">
+                    <input type="email" class="input__text" id="name" placeholder="sin correo" disabled [value]="user.email">
+                </div>
+            
+                <div class="container__group">
+                    <input type="number" class="input__text" id="email" placeholder="sin teléfono" disabled [value]="user.phone">
+                </div>
+
+                <div class="container__group">
+                    <input type="text" class="input__text" id="phone" placeholder="sin dirección" disabled [value]="user.address">
+                </div>
+            </div>
+
+            <div class="">
+                <button (click)="logout()" class="btn__update">Logout</button>
+            </div>
+        </div>
+</article>
+</section>

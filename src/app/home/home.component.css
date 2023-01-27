@@ -1,0 +1,45 @@
+.container__contain{
+    width: 340px;
+    width: 100%;
+    /* margin: 0 auto; */
+
+    padding: .5rem 3rem .5rem 3rem;
+    /* background-color: #f6f6f9; */
+}
+i{
+    color: rgb(179, 176, 176);
+}
+.bi, .bx{
+    font-size: 1.4rem;
+}
+/* ICONOS MENU */
+
+.container__icon {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+}
+.btn__icon{
+    cursor: pointer;
+}
+.btn__icon:hover{
+    transition: .3s;
+    transform: scale(1.27);
+}
+.btn--icon{  
+    color: #fa4a0c;
+} 
+.marco {
+    padding-top: .5px;
+    background-color: #ededed;
+}
+/* Responsive */
+@media only screen and (min-width: 1200px) {
+    .container__contain{
+        width: 370px;
+    } 
+    .container__icon{
+        margin: .3rem 0;
+    }
+
+}

@@ -1,0 +1,20 @@
+<section class="container-fluid vh-100 marco">
+
+    <div class="container__profile d-flex flex-column mt-4">
+        <!-- <div class="container__contain rounded-4"> -->
+
+            <router-outlet></router-outlet>
+
+            <div class="container__icon d-flex w-100 justify-content-between ps-4 pe-4 text-center align-items-center py-4">
+                <a routerLink="main" class="btn__icon"><i 
+                    routerLinkActive="btn--icon" class="bi bi-house"></i></a>
+
+                <a routerLink="profile" class="btn__icon"><i routerLinkActive="btn--icon" class="bi bi-person"></i></a>
+
+                <a routerLink="history" class="btn__icon"><i routerLinkActive="btn--icon" class='bx bx-history'></i></a>
+            </div>
+
+        <!-- </div> -->
+    </div>
+    
+</section>

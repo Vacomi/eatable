@@ -1,0 +1,70 @@
+/* FORMULARIO SIGNUP*/
+.container__form{
+    padding: 0 2.3rem;
+}
+.container__group{
+    position: relative;
+}
+.input__text{
+    display: block;
+    width: 100%;
+    outline: none;
+    border: none;
+    border-bottom: 1px solid #717172;
+    background-color: transparent;
+    padding: .6em .3em;
+    margin-bottom: 2rem;
+}
+.input__text:focus + .label, .input__text:not(:placeholder-shown) + .label {
+    transform: translateY(-12px) scale(.8);
+    transform-origin: left top;
+}
+.label{
+    font-size: .9rem;
+    color: gray;
+    cursor: pointer;
+    position: absolute;
+    top: 0;
+    left: 5px;
+    transform: translateY(10px);
+    transition: transform .5s, color .3s;
+}
+ .input__text--pass{
+    margin-bottom: 6.5rem;
+    letter-spacing: 2px;
+}  
+
+/* boton login */
+
+.btn__login{
+    color: #fff;
+    background-color: #fa4a0c;
+    border: none;
+    width: 100%;
+    padding: 1.2rem 0;
+    border-radius: 1.5rem;
+}
+.btn__login:hover{
+    transition: .5s;
+    transform: scale(.9);
+    background-color: #f7612a;
+}
+
+.btn__login:active{
+    background-color: #fa4a0c;   
+}
+/* FIJARSE SI DEBE SER PARECIDO AL LOGIN */
+
+@media only screen and (min-width: 1200px) {
+    .input__text{
+        margin-bottom: 2.5rem;
+    }
+    .input__text--pass{
+        margin-bottom: 11rem;
+        font-size: 1.2rem;
+    }  
+    .label{
+        font-size: .99rem;
+    }
+   
+  }
