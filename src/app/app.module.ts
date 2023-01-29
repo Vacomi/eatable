@@ -14,7 +14,6 @@ import { MainComponent } from './home/main/main.component';
 import { ProfileComponent } from './home/profile/profile.component';
 import { HistoryComponent } from './home/history/history.component';
 import { httpInterceptorProviders } from './interceptors';
-import { UpdateComponent } from './home/profile/update/update.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +26,7 @@ import { UpdateComponent } from './home/profile/update/update.component';
     MainComponent,
     ProfileComponent,
     HistoryComponent,
-    UpdateComponent
+
   ],
   imports: [
     BrowserModule,
