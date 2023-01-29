@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormGroup, FormControl } from '@angular/forms';
 import { Router } from '@angular/router';
 import { User } from 'src/app/Models/user.models';
 import { SessionService } from 'src/app/services/session.service';
@@ -19,9 +20,11 @@ export class ProfileComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    // this.update = false;
-    console.log(this.update)
+    console.log('estoy dentro del OnInit');
+    
     this.service.showuser(sessionStorage.getItem("id")).subscribe( (data: any) => {
+      console.log(data);
+      
       if(data.name) {  this.user.name = data.name }
       if(data.email) {  this.user.email = data.email }
       if(data.phone) {  this.user.phone = data.phone }
@@ -37,10 +40,23 @@ export class ProfileComponent implements OnInit {
       this.update = true;
     }
   }
-  actualizar() {
+  btnchange() {
     this.update = !this.update;
     console.log(this.update);
   } 
+
+  updateUser(n:string, e:string, p:string, a:string){
+    this.user.name = n;
+    this.user.email = e;
+    this.user.phone = p;
+    this.user.address = a;
+
+    this.service.updateuser(this.user,sessionStorage.getItem('id')).subscribe( data => {
+     alert('Haz actualizado con ÉXITO')
+    })
+
+  }
+
   logout(){
     sessionStorage.removeItem("Token");
     sessionStorage.removeItem("id");

@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { User } from '../Models/user.models';
 
 @Injectable({
   providedIn: 'root'
@@ -22,5 +23,9 @@ export class SessionService {
 
   showuser(id:string | null) {
     return this.http.get(`${this.apiUri}/profile/${id}`);
+  }
+  
+  updateuser(user:User, id:string | null) {
+    return this.http.put<User>(`${this.apiUri}/profile/${id}`, user);
   }
 }

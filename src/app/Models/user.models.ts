@@ -3,5 +3,6 @@ export interface User {
     email: string,
     phone: string | null,
     address: string | null,
-    // token : string,
+    password?: string,
+    token? : string | null,
 }

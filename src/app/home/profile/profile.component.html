@@ -12,7 +12,7 @@
         <aside *ngIf="update;else up">
         <div class="container__subtitle d-flex justify-content-between">
             <h2 class="subtitle">Personal details</h2>
-            <button class="btn__change" (click)="actualizar()">change</button>
+            <button class="btn__change" (click)="btnchange()">change</button>
         </div>
 
         <div class="container__form" >
@@ -37,33 +37,35 @@
         </div>
     </aside>
 
+    <!-- ACTUALIZADOR -->
         <ng-template #up>
             <h2 class="subtitle">Update personal details</h2>
+            <!-- <form class="container__form" [formGroup]="updateForm" (ngSubmit)="onUpdate()"> -->
             <form class="container__form">
                 <div class="container__data">
                     <div class="mb-1 container__group">
-                        <input type="text" class="input__text" id="name" placeholder=" ">
+                        <input type="text" class="input__text" id="name" placeholder=" " [value]="user.name" #name>
                         <label for="name" class="label">Name</label>
                     </div>
                 
                     <div class="mb-1 container__group">
-                        <input type="email" class="input__text" id="email" placeholder=" ">
+                        <input type="email" class="input__text" id="email" placeholder=" "name="email" [value]="user.email" #email>
                         <label for="email" class="label">Email</label>
                     </div>
             
                     <div class="mb-1 container__group">
-                        <input type="number" class="input__text" id="phone" placeholder=" ">
+                        <input type="number" class="input__text" id="phone" placeholder=" " [value]="user.phone" #phone>
                         <label for="phone" class="label">Phone</label>
                     </div>
             
                     <div class="mb-1 container__group">
-                        <input type="text" class="input__text input__address" id="address" placeholder=" ">
+                        <input type="text" class="input__text input__address" id="address" placeholder=" "[value]="user.address" #address>
                         <label for="address" class="label">Address</label>
                     </div>
                 </div>
             
                 <div class="">
-                    <button class="btn__update">Update</button>
+                    <button type="button" class="btn__update" (click)="updateUser(name.value, email.value, phone.value, address.value)">Update</button>
                  </div>
             </form>
         </ng-template>

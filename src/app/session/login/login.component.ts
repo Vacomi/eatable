@@ -24,10 +24,6 @@ export class LoginComponent {
     console.log(this.loginForm.value);
     
     this.sessionsService.login(this.loginForm.value).subscribe((data: any) =>{
-
-      console.log(typeof data)
-      console.log(data);
-      
       if (data.token){
         
         sessionStorage.setItem("Token", data.token);
@@ -35,6 +31,8 @@ export class LoginComponent {
         console.log(data);
 
         this.router.navigate(['/home'])
+      } else {
+        alert('Su correo o contraseña son incorrectas')
       }
     })
   }
