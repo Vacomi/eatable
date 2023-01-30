@@ -2,6 +2,7 @@ import { Component, NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HistoryComponent } from './home/history/history.component';
 import { HomeComponent } from './home/home.component';
+import { CartComponent } from './home/main/cart/cart.component';
 import { MainComponent } from './home/main/main.component';
 import { ProductComponent } from './home/main/product/product.component';
 import { ProfileComponent } from './home/profile/profile.component';
@@ -15,6 +16,7 @@ const routes: Routes = [
   { path: '' , redirectTo: '/session/login', pathMatch:'full' },
   { path: 'login', redirectTo: '/session/login', pathMatch: 'full'},
   { path: 'product', component: ProductComponent},
+  { path: 'cart', component: CartComponent},
   { path: 'session', component: SessionComponent, children: [
     { path: 'login', component: LoginComponent},
     { path: 'signup', component: SignupComponent },

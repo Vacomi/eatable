@@ -1,0 +1,47 @@
+<div class="container__nav container">
+    <div class="container__title mt-3">
+        <h1 class="text-center fw-bold text">Cart</h1>
+        <a class="btn__left"><i class="bi bi-chevron-left" (click)="back()"></i></a>
+    </div>
+</div>
+<section *ngIf="productList">
+
+
+<div class="container__foods">
+    <div class="row container__food" *ngFor="let plato of productList">
+        <div class="col-3 d-flex justify-content-center align-items-center">
+            <div class="container__group">
+                <img class="container__img" [src]="plato.picture_url" alt="">
+            </div>
+        </div>
+        <div class="col-9 px-2">
+            <div class="container__texts">
+                <p class="title fw-bold py-2">{{plato.name | titlecase}}</p>
+                <div class="container__text d-flex justify-content-between align-items-center">
+                    <p class="money">{{plato.price | currency}}</p>
+
+                    <div class="btn__contain d-flex justify-content-center align-items-center">
+                        <button class="btn"><i class="fa-sharp fa-solid fa-minus"></i></button>
+                        <span>{{plato.quantity}}</span>
+                        <button class="btn"><i class="fa-solid fa-plus"></i></button>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<div class="container__total d-flex justify-content-between align-items-center">
+    <p class="total">Total</p>
+    <p class="total__money">$97.90</p>
+</div>
+
+<div>
+    <button class="btn__checkout">Checkout</button>
+</div>
+</section>
+<ng-template>
+
+</ng-template>

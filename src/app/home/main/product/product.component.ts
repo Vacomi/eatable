@@ -1,9 +1,11 @@
 
 import { HttpParams } from '@angular/common/http';
+import { Location } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Params } from '@angular/router';
 import { Product } from 'src/app/Models/Producto.model';
 import { ProductService } from 'src/app/services/product.service';
+import { CarritoService } from 'src/app/services/carrito.service';
 
 @Component({
   selector: 'app-product',
@@ -24,7 +26,9 @@ export class ProductComponent implements OnInit{
   };
 
   constructor(private _sproduct : ProductService, 
-              private readonly route: ActivatedRoute) {}
+              private readonly route: ActivatedRoute,
+              private location: Location,
+              private _scart : CarritoService) {}
 
   ngOnInit(): void {
     this.route.queryParams.subscribe(
@@ -35,12 +39,18 @@ export class ProductComponent implements OnInit{
     this._sproduct.getProductId(this.id).subscribe((product: Product) => {
       this.plato = {...product};
       console.log(this.plato);
-      
+      this.isAdd = this._scart.isItemAddedToCart(this.id);
+      this.btnMessage = this.isAdd ? "Added to cart" : "Add to cart";
     })
   }
   
-  addCart() {
-
+  addCart() {    
+    this._scart.addProductCart(this.plato);
+    this.isAdd = true;
+    this.btnMessage = this.isAdd ? "Added to cart" : "Add to cart";
+  }
+  back(){
+    this.location.back()
   }
 
 }

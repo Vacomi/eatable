@@ -1,0 +1,167 @@
+.container__title{
+    position: relative;
+    margin-bottom: 2rem;
+}
+/* Flecha izquierda */
+.btn__left{
+    cursor: pointer;
+    border: none;
+    background-color: transparent;
+    padding: 0 1rem 0 0;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+a i::before {
+    font-size: 1rem;
+    font-weight: bold !important;
+    color: #000;
+}
+.fa-chevron-left{
+    font-size: 1rem;
+    color: #000;
+}
+
+.btn__left:hover{
+    transition: .3s;
+    transform: scale(1.2);
+}
+
+
+
+/* Listado de compras*/
+.container__foods{
+    height: 20.9rem;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    background-color: #f6f6f9;
+}
+/* Manejo del Scrool CSS */
+.container__foods::-webkit-scrollbar{
+    /* height: 9px; */
+    width: 0;
+}
+/* .container__foods::-webkit-scrollbar-thumb{
+    background-color: #c1c1c1;
+    border-radius: 50px;
+}
+.container__foods::-webkit-scrollbar-thumb:hover{
+    background-color: rgb(173, 173, 173);
+} */
+/*----------------------------------------*/
+
+.container__food{
+    background-color: #fff;
+    padding: 1rem 0 1rem .7rem;
+    width: 100%;
+    margin: 0 auto;
+    border-radius: 1.2rem;
+    box-shadow: 0px 7px 10px -3px rgba(211, 210, 210, 0.829);
+    margin-bottom: 1.2rem;
+}
+.container__food:hover{
+    /* cursor: pointer; */
+    /* transition: .4s;
+    transform: scale(1.1); */
+}
+
+.container__img{
+    display: block;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    object-fit: cover;
+    box-shadow: 0px 10px 20px -3px rgb(175, 174, 174);
+}
+
+.title{
+    font-size: .78rem;
+}
+.money{
+    font-weight: 700;
+    font-size: .78rem;
+    color: #fa4a0c;
+}
+
+.fa-sharp,.fa-plus{
+    color: #fff;
+    font-size: .7rem;
+    margin: 0;
+    padding: 0;
+}
+.btn__contain{
+    background-color: #fa4a0c;
+    border-radius: 30px;
+    height: 17.2px;
+}
+.btn{
+    padding: 0;
+    padding: 0 .3rem;
+    border: none;
+}
+.btn:active{
+    color: #fff;
+}
+span{
+    font-size: .8rem;
+    color: #fff;
+}
+
+/*CONTAINER TOTAL*/
+
+.container__total{
+    margin: 1.2rem 0;
+}
+
+.total{
+    font-size: .9rem;
+}
+.total__money{
+    color: #373737;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+
+/* boton login */
+
+.btn__checkout{
+    color: #fff;
+    background-color: #fa4a0c;
+    border: none;
+    width: 100%;
+    padding: 1.2rem 0;
+    border-radius: 1.5rem;
+}
+.btn__checkout:hover{
+    transition: .5s;
+    transform: scale(.9);
+    background-color: #f7612a;
+}
+
+.btn__checkout:active{
+    background-color: #fa4a0c;   
+}
+
+/* Responsive */
+  @media only screen and (min-width: 1200px) {
+    .container__foods{
+        height: 24.6rem;
+        overflow-y: scroll;
+    }
+    .container__food{
+        margin-bottom: 1.3rem;
+    }
+    
+    .container__img{
+        width: 51px;
+        height: 51px;
+    }
+    .title{
+        font-size: .87rem;
+    }
+    .money{
+        font-size: .88rem;
+    }
+
+}
