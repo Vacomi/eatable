@@ -16,6 +16,7 @@ const routes: Routes = [
   { path: '' , redirectTo: '/session/login', pathMatch:'full' },
   { path: 'login', redirectTo: '/session/login', pathMatch: 'full'},
   { path: 'product', component: ProductComponent},
+  // { path: 'cart', redirectTo: 'home/cart'},
   { path: 'cart', component: CartComponent},
   { path: 'session', component: SessionComponent, children: [
     { path: 'login', component: LoginComponent},
@@ -27,6 +28,7 @@ const routes: Routes = [
     { path: 'update', redirectTo: '/home/profile/update', pathMatch: 'full'},
     { path: 'profile', component: ProfileComponent },
     { path: 'history', component: HistoryComponent },
+    { path: 'cart', component: CartComponent}
   ] },
   { path: '**', component: NotFoundComponent}
 ];
