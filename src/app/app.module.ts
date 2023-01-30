@@ -7,13 +7,14 @@ import { AppComponent } from './app.component';
 import { LoginComponent } from './session/login/login.component';
 import { SignupComponent } from './session/signup/signup.component';
 import { NotFoundComponent } from './mostrables/not-found/not-found.component';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { SessionComponent } from './session/session.component';
 import { HomeComponent } from './home/home.component';
 import { MainComponent } from './home/main/main.component';
 import { ProfileComponent } from './home/profile/profile.component';
 import { HistoryComponent } from './home/history/history.component';
 import { httpInterceptorProviders } from './interceptors';
+import { ProductComponent } from './home/main/product/product.component';
 
 @NgModule({
   declarations: [
@@ -26,13 +27,15 @@ import { httpInterceptorProviders } from './interceptors';
     MainComponent,
     ProfileComponent,
     HistoryComponent,
+    ProductComponent,
 
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [httpInterceptorProviders],
   bootstrap: [AppComponent]

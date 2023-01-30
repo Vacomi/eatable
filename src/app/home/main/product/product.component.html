@@ -1,0 +1,16 @@
+
+<div class="container__nav">
+    <div class="container__title">
+        <a class="btn__left"><i class="fa-solid fa-chevron-left"></i></a>
+    </div>
+</div>
+<div class="container__descriptions">
+    <img class="container__img" [src]="plato.picture_url" alt="HOla">
+    <h2 class="subtitle">{{plato.name | titlecase}}</h2>
+    <p class="money">{{plato.price | currency}}</p>
+    <div class="container__description">
+        <h3 class="description__subtitle">Description</h3>
+        <p class="description">{{plato.description}}</p>
+    </div>
+    <button class="btn" [disabled]="isAdd" (click)="addCart">{{btnMessage}}</button>
+</div>

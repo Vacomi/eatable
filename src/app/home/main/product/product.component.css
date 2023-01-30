@@ -1,0 +1,105 @@
+.container__title{
+    width: 100%;
+    margin-bottom: 1rem;
+}
+
+/* Flecha izquierda */
+.btn__left{
+    cursor: pointer;
+    border: none;
+    background-color: transparent;
+    padding: 0 1rem 0 0;
+}
+.fa-chevron-left{
+    font-size: 1rem;
+    color: #000;
+}
+
+.btn__left:hover{
+    transition: .3s;
+    transform: scale(1.2);
+}
+
+.container__img{
+    display: block;
+    margin: 0 auto;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    box-shadow: 0px 15px 20px -3px rgb(177, 175, 175);
+}
+
+.subtitle{
+    color: #333333;
+    margin: 2rem 0 1rem 0;
+    font-weight: 700;
+    font-size: 1.2rem;
+    text-align: center;
+}
+
+.money{
+    font-weight: bold;
+    font-size: 1.2rem;
+    color:  #fa4a0c;
+    text-align: center;
+    margin-bottom: .9rem;
+}
+.container__description{
+    padding: .8rem;
+    border-radius: .8rem;
+    margin-bottom: 2rem;
+}
+.description__subtitle{
+    color: #333333;
+    font-weight: 700;
+    margin-bottom: .4rem;
+}
+.description{
+    text-align: justify;
+    color: #333333;
+    line-height: 17px;
+    font-size: .8rem;
+}
+/* boton login */
+
+.btn{
+    color: #fff;
+    background-color: #fa4a0c;
+    border: none;
+    width: 100%;
+    padding: 1.2rem 0;
+    border-radius: 1.5rem;
+}
+.btn:hover{
+    transition: .5s;
+    transform: scale(.9);
+    background-color: #f7612a;
+}
+
+.btn:active{
+    background-color: #fa4a0c;   
+}
+
+
+/* Responsive */
+
+  @media only screen and (min-width: 1200px) { 
+    
+    .container__img{
+        display: block;
+        margin: 0 auto;
+        width: 190px;
+        height: 190px;
+    }
+    .subtitle{
+        margin: 3.5rem 0 .8rem 0;
+    }
+
+    .container__not{
+        margin: 6.7rem 0 16.6rem 0;
+    }        
+    .bi-cart2{
+        font-size: 5.7rem;
+    } 
+}
