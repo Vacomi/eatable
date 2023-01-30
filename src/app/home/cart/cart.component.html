@@ -1,47 +1,99 @@
+<div class="article" *ngIf="!gocheck; else checkout">
 <div class="container__nav container">
     <div class="container__title mt-3">
         <h1 class="text-center fw-bold text">Cart</h1>
         <a class="btn__left"><i class="bi bi-chevron-left" (click)="back()"></i></a>
     </div>
 </div>
-<section *ngIf="productList">
+<section *ngIf="productList.length > 0; else nohay">
 
-
-<div class="container__foods">
-    <div class="row container__food" *ngFor="let plato of productList">
-        <div class="col-3 d-flex justify-content-center align-items-center">
-            <div class="container__group">
-                <img class="container__img" [src]="plato.picture_url" alt="">
+    <div class="container__foods">
+        <div class="row container__food" *ngFor="let plato of productList">
+            <div class="col-3 d-flex justify-content-center align-items-center">
+                <div class="container__group">
+                    <img class="container__img" [src]="plato.picture_url" alt="">
+                </div>
             </div>
-        </div>
-        <div class="col-9 px-2">
-            <div class="container__texts">
-                <p class="title fw-bold py-2">{{plato.name | titlecase}}</p>
-                <div class="container__text d-flex justify-content-between align-items-center">
-                    <p class="money">{{plato.price | currency}}</p>
+            <div class="col-9 px-2">
+                <div class="container__texts">
+                    <p class="title fw-bold py-2">{{plato.name | titlecase}}</p>
+                    <div class="container__text d-flex justify-content-between align-items-center">
+                        <p class="money">{{ ((plato.price || 0) * (plato.quantity || 0)) | currency}}</p>
 
-                    <div class="btn__contain d-flex justify-content-center align-items-center">
-                        <button class="btn"><i class="fa-sharp fa-solid fa-minus"></i></button>
-                        <span>{{plato.quantity}}</span>
-                        <button class="btn"><i class="fa-solid fa-plus"></i></button>
+                        <div class="btn__contain d-flex justify-content-center align-items-center">
+                            <button class="btn" (click)="reduceQuantity(plato)"><i class="fa-sharp fa-solid fa-minus"></i></button>
+                            <span>{{plato.quantity}}</span>
+                            <button class="btn" (click)="incrementQuantity(plato)"><i class="fa-solid fa-plus"></i></button>
+                        </div>
+                        
                     </div>
-                    
                 </div>
             </div>
         </div>
+
     </div>
 
-</div>
+    <div class="container__total d-flex justify-content-between align-items-center">
+        <p class="total">Total</p>
+        <p class="total__money">{{ total | currency }}</p>
+    </div>
 
-<div class="container__total d-flex justify-content-between align-items-center">
-    <p class="total">Total</p>
-    <p class="total__money">$97.90</p>
-</div>
-
-<div>
-    <button class="btn__checkout">Checkout</button>
-</div>
+    <div>
+        <button class="btn__checkout" (click)="gocheck =true">Checkout</button>
+    </div>
 </section>
-<ng-template>
+</div>
+<!-- CHECKOUT -->
+<ng-template #checkout>
+    <div class="container__nav">
+        <div class="container__title">
+            <h1 class="text-center fw-bold text">Checkout</h1>
+            <a class="btn__left"><i class="fa-solid fa-chevron-left" (click)="volver()" ></i></a>
+        </div>
+    </div>
+    
+    <h2 class="delivery">Delivery</h2>
+    
+    <div class="container__subtitle">
+        <h2 class="subtitle">Address details</h2>
+        <button class="btn__change" routerLink="/home">change</button>
+    </div>
+    
+    <div class="container__form">
+        <div class="container__data">
+            <div class="container__group">
+                <input type="text" class="input__text  input__text--name" [value]="user.name" disabled>
+            </div>
+        
+            <div class="container__group">
+                <input type="text" class="input__text" [value]="user.address" disabled>
+            </div>
+    
+            <div class="container__group">
+                <input type="tel" class="input__text input__text--phone" [value]="user.phone" disabled>
+            </div>
+        </div>
+        
+    </div>
+    
+    <div class="container__total d-flex justify-content-between align-items-center">
+        <p class="total">Total</p>
+        <p class="total__money">{{total | currency}}</p>
+    </div>
+    
+    <div>
+        <button class="btn__completeOrder">Complete order</button>
+    </div>
 
 </ng-template>
+
+
+<ng-template #nohay>
+    <div class="container__noItem d-flex justify-content-center align-items-center">
+        <div class="container__not text-center">
+            <i class="bi bi-cart2 btn__cart"></i>
+            <h2 class="subtitle">No items in the cart</h2>
+        </div>
+    </div> 
+</ng-template>
+

@@ -165,3 +165,167 @@ span{
     }
 
 }
+
+
+
+/* no hay */
+.container__noItem{
+    height: 100%;
+}
+.container__not{
+    margin: 7rem 0 14.8rem 0;
+}
+.subtitle{
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+.bi-cart2{
+    display: block;
+    color: #c7c6c6;
+    font-size: 5rem;
+    padding: .8rem 0;
+    margin-bottom: .2rem;
+}
+
+
+/* Responsive */
+  @media only screen and (min-width: 1200px) {   
+    .container__not{
+        margin: 8.5rem 0 16.3rem 0;
+    }        
+    .bi-cart2{
+        font-size: 5.7rem;
+    } 
+}
+
+
+/* checkout */
+
+.container__title{
+    position: relative;
+    margin-bottom: 2rem;
+}
+/* Flecha izquierda */
+.btn__left{
+    cursor: pointer;
+    border: none;
+    background-color: transparent;
+    padding: 0 1rem 0 0;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+.fa-chevron-left{
+    font-size: 1rem;
+    color: #000;
+}
+
+.btn__left:hover{
+    transition: .3s;
+    transform: scale(1.2);
+}
+
+/*Develivery*/
+.delivery{
+    font-size: 1.3rem;
+    font-weight: 700;
+    margin: 1.1rem 0 1.4rem 0;
+}
+.container__subtitle{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.subtitle{
+    font-weight: 700;
+    font-size: .8rem;
+    color: #3d3d3d;
+}
+.btn__change{
+    font-size: .8rem;
+    border-radius: 0;
+    border: 0;
+    background-color: transparent;
+    color:#fa4a0c ;
+}
+
+.btn__change:hover{
+    font-weight: 700;
+}
+
+.container__form{
+    margin-top: .9rem;
+}
+.container__data{
+    background-color: #fff;
+    border-radius: .8rem;
+    padding: 1rem 1.3rem .5rem 1.3rem;
+    margin-bottom: 10.2rem;
+    box-shadow: 0px 10px 15px -3px rgba(0,0,0,0.1);
+}
+
+/* PERSONAL DETAILS*/
+.input__text{
+    display: block;
+    width: 90%;
+    outline: none;
+    border: none;
+    border-bottom: 1px solid #9c9c9c8e;
+    background-color: transparent;
+    padding: .47em .3em;
+    margin-bottom: .2rem;
+    font-size: .8rem;
+}
+.input__text::placeholder{
+    color: #000;
+}
+.input__text--name::placeholder{
+    font-weight: bold;
+}
+.input__text--phone{
+    border-bottom: none;
+}
+
+.container__total{
+    margin: 1.2rem 0;
+}
+
+.total{
+    font-size: .9rem;
+}
+.total__money{
+    color: #373737;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+.bi-currency-dollar{
+    color: #000;
+    font-size: 1.1rem;
+}
+
+/* boton login */
+
+.btn__completeOrder{
+    color: #fff;
+    background-color: #fa4a0c;
+    border: none;
+    width: 100%;
+    padding: 1.2rem 0;
+    border-radius: 1.5rem;
+}
+.btn__completeOrder:hover{
+    transition: .5s;
+    transform: scale(.9);
+    background-color: #f7612a;
+}
+
+.btn__completeOrder:active{
+    background-color: #fa4a0c;   
+}
+
+/* Responsive */
+  @media only screen and (min-width: 1200px) {
+    .container__data{
+        margin-bottom: 13.9rem;
+    }
+}
