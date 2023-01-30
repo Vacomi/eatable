@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl } from '@angular/forms';
 import { Router } from '@angular/router';
+import { Location } from '@angular/common';
 import { User } from 'src/app/Models/user.models';
 import { SessionService } from 'src/app/services/session.service';
 
@@ -10,7 +11,7 @@ import { SessionService } from 'src/app/services/session.service';
   styleUrls: ['./profile.component.css']
 })
 export class ProfileComponent implements OnInit {
-  constructor(private router: Router, private service:SessionService){}
+  constructor(private router: Router, private service:SessionService,private location: Location){}
   update = true;
   user: User = {
     name : 'sin nombre',
@@ -32,10 +33,8 @@ export class ProfileComponent implements OnInit {
     })
   }
   back() {
-    console.log('ingresamos al bak');
-    
     if(this.update) {
-      console.log('back');
+      this.location.back()
     }else {
       this.update = true;
     }
