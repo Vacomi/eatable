@@ -9,7 +9,7 @@ export class SessionService {
   private apiUri: string = "http://localhost:8000/api"
 
   constructor(
-    private http: HttpClient,
+    private http: HttpClient
   ) { }
 
   login(credentials: any){
@@ -28,4 +28,5 @@ export class SessionService {
   updateuser(user:User, id:string | null) {
     return this.http.put<User>(`${this.apiUri}/profile/${id}`, user);
   }
+
 }
