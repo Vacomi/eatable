@@ -15,7 +15,11 @@
 <!-- Os -->
 
 <div class="container__search bg-white rounded-4">
-    <a class="btn__search"><i class='bx bx-search'></i></a>
+    <a class="btn__search">
+        <i *ngIf="!mostrar" class='bx bx-search'></i>
+        <i *ngIf="mostrar" class="bi bi-chevron-left"></i>
+    </a>
+
     <a class="btn__left"><i class="fa-solid fa-chevron-left"></i></a>
     <input class="input__text"  (click)="mostrar=!mostrar" type="text" placeholder="Search">
     <i class="bi bi-cart2 btn__cart"></i>
@@ -37,52 +41,9 @@
 
 
 <div class="container__foods d-flex flex-wrap">
-    <div class="container__food ">
-        <img class="container__img" src="../../assets/IMG/pizza.jpg" alt="">
-        <p class="text-center pt-4 pb-1 fw-bold">Pasta Dish</p>
-        <p class="text-center pt-2 money">$15.45</p>    
+    <div *ngFor="let product of productList" class="container__food ">
+        <img class="container__img" [src]="product.picture_url" alt="e">
+        <p class="text-center pt-4 pb-1 fw-bold">{{product.name | titlecase}}</p>
+        <p class="text-center pt-2 money">{{product.price | currency}}</p>    
     </div>
-
-    <div class="container__food ">
-        <img class="container__img" src="../../assets/IMG/ensalada.jpg" alt="">
-        <p class="text-center pt-4 pb-1 fw-bold">Lon named pasta dish</p>
-        <p class="text-center pt-2 money">$99.45</p>    
-    </div>
-
-    <div class="container__food ">
-        <img class="container__img" src="../../assets/IMG/tallarin.jpg" alt="">
-        <p class="text-center pt-4 pb-1 fw-bold">Other Italian Dish</p>
-        <p class="text-center pt-2 pb-3 money">$12.25</p>    
-    </div>
-
-    <div class="container__food ">
-        <img class="container__img" src="../../assets/IMG/italian-food.jpg" alt="">
-        <p class="text-center pt-4 pb-1 fw-bold">Extra Italian Food</p>
-        <p class="text-center pt-2 pb-3 money">$20.00</p>    
-    </div>
-    
-    <div class="container__food ">
-        <img class="container__img" src="../../assets/IMG/italian-food.jpg" alt="">
-        <p class="text-center pt-4 pb-1 fw-bold">Pasta Dish</p>
-        <p class="text-center pt-2 pb-3 money">$15.45</p>    
-    </div>
-
-    <div class="container__food ">
-        <img class="container__img" src="../../assets/IMG/pizza.jpg" alt="">
-        <p class="text-center pt-4 pb-1 fw-bold">Pasta Dish</p>
-        <p class="text-center pt-2 pb-3 money">$15.45</p>    
-    </div>
-
-    <div class="container__food ">
-        <img class="container__img" src="../../assets/IMG/pizza.jpg" alt="">
-        <p class="text-center pt-4 pb-1 fw-bold">Pasta Dish</p>
-        <p class="text-center pt-2 pb-3 money">$15.45</p>    
-    </div>
-
-    <div class="container__food ">
-        <img class="container__img" src="../../assets/IMG/pizza.jpg" alt="">
-        <p class="text-center pt-4 pb-1 fw-bold">Pasta Dish</p>
-        <p class="text-center pt-2 pb-3 money">$15.45</p>    
-    </div>
-
 </div>
