@@ -15,7 +15,7 @@ import { ProfileComponent } from './home/profile/profile.component';
 import { HistoryComponent } from './home/history/history.component';
 import { httpInterceptorProviders } from './interceptors';
 import { ProductComponent } from './home/main/product/product.component';
-import { CartComponent } from './home/main/cart/cart.component';
+import { CartComponent } from './home/cart/cart.component';
 
 @NgModule({
   declarations: [
