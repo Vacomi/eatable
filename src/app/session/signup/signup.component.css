@@ -30,8 +30,8 @@
     transition: transform .5s, color .3s;
 }
  .input__text--pass{
-    margin-bottom: 6.5rem;
     letter-spacing: 2px;
+    margin-bottom: 8.4rem;
 }  
 
 /* boton login */
@@ -43,6 +43,7 @@
     width: 100%;
     padding: 1.2rem 0;
     border-radius: 1.5rem;
+    margin-bottom: 1rem;
 }
 .btn__login:hover{
     transition: .5s;
