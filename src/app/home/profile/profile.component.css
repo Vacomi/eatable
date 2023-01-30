@@ -153,16 +153,6 @@ h1{
 
 /*Update personal details---------------------------------------------*/
 
-
-/* .container__title{
-    position: relative;
-    margin-bottom: 1.7rem;
-}
-h1{
-    font-size: 1rem;
-    color: #3d3d3d;
-} */
-
 .subtitle__update{
     font-weight: 700;
     font-size: .9rem;
@@ -181,7 +171,7 @@ h1{
 /* UPDATE PERSONAL DETAILS*/
 .label__update{
     font-size: .71rem;
-    color: gray;
+    color: rgb(172, 172, 172);
     cursor: pointer;
 }
 
