@@ -12,11 +12,11 @@
     left: 0;
     top: 0;
 }
-a i::before {
+/* a i::before {
     font-size: 1rem;
     font-weight: bold !important;
     color: #000;
-}
+} */
 .fa-chevron-left{
     font-size: 1rem;
     color: #000;
@@ -173,9 +173,9 @@ span{
     height: 100%;
 }
 .container__not{
-    margin: 7rem 0 14.8rem 0;
+    margin: 6rem 0 12.696rem 0;
 }
-.subtitle{
+.subtitle__not{
     font-size: 1.2rem;
     font-weight: 600;
 }
@@ -191,7 +191,7 @@ span{
 /* Responsive */
   @media only screen and (min-width: 1200px) {   
     .container__not{
-        margin: 8.5rem 0 16.3rem 0;
+        margin: 7rem 0 12rem 0;
     }        
     .bi-cart2{
         font-size: 5.7rem;
@@ -298,10 +298,10 @@ span{
     font-size: 1.2rem;
     font-weight: bold;
 }
-.bi-currency-dollar{
-    color: #000;
+/* .bi-currency-dollar{
+    color: #373737;
     font-size: 1.1rem;
-}
+} */
 
 /* boton login */
 
