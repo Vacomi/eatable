@@ -10,6 +10,7 @@ import { User } from 'src/app/Models/user.models';
   templateUrl: './cart.component.html',
   styleUrls: ['./cart.component.css']
 })
+
 export class CartComponent implements OnInit {
   productList : Product[] = [];
   total!: number;

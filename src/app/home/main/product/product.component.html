@@ -19,10 +19,12 @@
             </div>
             <button class="btn" [disabled]="isAdd" (click)="addCart()">{{btnMessage}}</button>
         </div>
+
+
         <div class="container__icon d-flex justify-content-between text-center align-items-center py-4">
-            <a routerLink="main" class="btn__icon"><i routerLinkActive="btn--icon" class="bi bi-house"></i></a>
-            <a routerLink="profile" class="btn__icon"><i routerLinkActive="btn--icon" class="bi bi-person"></i></a>
-            <a routerLink="history" class="btn__icon"><i routerLinkActive="btn--icon" class='bx bx-history'></i></a>
+            <a routerLink="/home/main" class="btn__icon"><i routerLinkActive="btn--icon" class="bi bi-house"></i></a>
+            <a routerLink="/home/profile" class="btn__icon"><i routerLinkActive="btn--icon" class="bi bi-person"></i></a>
+            <a routerLink="/home/history" class="btn__icon"><i routerLinkActive="btn--icon" class='bx bx-history'></i></a>
         </div>
     </div>
 </div>
