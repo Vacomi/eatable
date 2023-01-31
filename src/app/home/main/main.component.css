@@ -8,6 +8,7 @@
 }
 .found{
     display: none;
+    display: block;
 }
 /* Flecha izquierda */
 .btn__left{
@@ -149,4 +150,26 @@
     .container__food{
         margin-bottom: 3.4rem;
     }
+}
+
+
+
+/*  no hay products */
+/* no hay */
+.container__noItem{
+    height: 100%;
+}
+.container__not{
+    margin: 7rem 0 14.8rem 0;
+}
+.subtitle{
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+.icono-not{
+    display: block;
+    color: #c7c6c6;
+    font-size: 5rem;
+    padding: .8rem 0;
+    margin-bottom: .2rem;
 }
