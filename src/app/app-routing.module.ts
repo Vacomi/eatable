@@ -11,6 +11,7 @@ import { NotFoundComponent } from './mostrables/not-found/not-found.component';
 import { LoginComponent } from './session/login/login.component';
 import { SessionComponent } from './session/session.component';
 import { SignupComponent } from './session/signup/signup.component';
+import { PermissionsGuard } from './Guard/permissions.guard';
 
 const routes: Routes = [
   { path: '' , redirectTo: '/session/login', pathMatch:'full' },
@@ -23,12 +24,12 @@ const routes: Routes = [
     { path: 'signup', component: SignupComponent },
   ]},
   { path: 'home', redirectTo: '/home/profile', pathMatch: 'full'},
-  { path: 'home', component: HomeComponent, children: [
+  { path: 'home', component: HomeComponent,canActivate:[PermissionsGuard], children: [
     { path: 'main', component: MainComponent},
     { path: 'update', redirectTo: '/home/profile/update', pathMatch: 'full'},
     { path: 'profile', component: ProfileComponent },
-    { path: 'history', component: HistoryComponent },
-    { path: 'cart', component: CartComponent}
+    { path: 'history', component: HistoryComponent,canActivate:[PermissionsGuard] },
+    { path: 'cart', component: CartComponent,canActivate:[PermissionsGuard]}
   ] },
   { path: '**', component: NotFoundComponent}
 ];

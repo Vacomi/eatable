@@ -16,11 +16,17 @@
       <div class="mb-3 container__group">
           <input type="email" class="input__text" id="email" placeholder=" " formControlName="email">
           <label for="email" class="label">Email address</label>
+          <div *ngIf="signForm.get('email')?.touched && signForm.get('email')?.errors?.['required']" class="alert alert-danger">This field is required.</div>
+          <div *ngIf="signForm.get('email')?.touched && signForm.get('email')?.errors?.['minlength']"
+            class="alert alert-danger">Name must be longer than
+            {{ signForm.get('email')?.errors?.['minlength']?.requiredLength}} characters.</div>
       </div>
 
       <div class="mb-3 container__group">
           <input type="password" class="input__text input__text--pass" id="pass" placeholder=" " formControlName="password">
           <label for="pass" class="label">Password</label>
+          <div *ngIf="signForm.get('password')?.touched && signForm.get('password')?.errors?.['required']"
+          class="alert alert-danger">This field is required.</div>
       </div>
 
       <div class="mb-3">

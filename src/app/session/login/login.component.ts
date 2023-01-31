@@ -12,7 +12,9 @@ export class LoginComponent {
   loginForm = new FormGroup({
     email: new FormControl(''),
     password: new FormControl(''),
+    
   })
+  fb: any;
 
   constructor(
     private sessionsService: SessionService,
@@ -36,4 +38,5 @@ export class LoginComponent {
       }
     })
   }
+ 
 }
