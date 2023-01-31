@@ -31,7 +31,8 @@
 
 /* Listado de compras*/
 .container__foods{
-    height: 20.9rem;
+    margin-top: 2.2rem;
+    height: 20.636rem;
     overflow-x: hidden;
     overflow-y: scroll;
     background-color: #f6f6f9;
@@ -146,7 +147,7 @@ span{
 /* Responsive */
   @media only screen and (min-width: 1200px) {
     .container__foods{
-        height: 24.6rem;
+        height: 24.408rem;
         overflow-y: scroll;
     }
     .container__food{
@@ -168,12 +169,12 @@ span{
 
 
 
-/* no hay */
+/* no hay --------------------------------------------------*/
 .container__noItem{
     height: 100%;
 }
 .container__not{
-    margin: 6rem 0 12.696rem 0;
+    margin: 7rem 0 12.696rem 0;
 }
 .subtitle__not{
     font-size: 1.2rem;
@@ -191,7 +192,7 @@ span{
 /* Responsive */
   @media only screen and (min-width: 1200px) {   
     .container__not{
-        margin: 7rem 0 12rem 0;
+        margin: 8rem 0 14.785rem 0;
     }        
     .bi-cart2{
         font-size: 5.7rem;
@@ -199,12 +200,9 @@ span{
 }
 
 
-/* checkout */
+/* checkout ------------------------------------------------------*/
 
-.container__title{
-    position: relative;
-    margin-bottom: 2rem;
-}
+
 /* Flecha izquierda */
 .btn__left{
     cursor: pointer;
@@ -279,6 +277,9 @@ span{
 .input__text::placeholder{
     color: #000;
 }
+.input__text--name{
+    font-weight: bold;
+}
 .input__text--name::placeholder{
     font-weight: bold;
 }
@@ -298,10 +299,10 @@ span{
     font-size: 1.2rem;
     font-weight: bold;
 }
-/* .bi-currency-dollar{
+.bi-currency-dollar{
     color: #373737;
     font-size: 1.1rem;
-} */
+}
 
 /* boton login */
 

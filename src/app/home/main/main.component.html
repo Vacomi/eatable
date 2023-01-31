@@ -1,31 +1,18 @@
-<!-- <div class="container">
-    <div class="row">
-        <div class="col-2">
-            <i class="bi bi-search"></i>
-        </div>
-        <div class="col-8">
-            <input type="search">
-        </div>
-        <div class="col-2">
-            <i class="bi bi-cart2"></i>
-        </div>
-    </div>
-</div> -->
 
-<!-- Os -->
-
-<div class="container__search bg-white rounded-4">
+<div class="container__search  rounded-4">
     <a class="btn__search">
-        <i *ngIf="!mostrar" class='bx bx-search'></i>
-        <i *ngIf="mostrar" class="bi bi-chevron-left"></i>
+        <i *ngIf="mostrar" class='bx bx-search'></i>
+        <i *ngIf="!mostrar" class="fa-solid fa-chevron-left"></i>
+
     </a>
 
     <!-- <a class="btn__left"><i class="fa-solid fa-chevron-left"></i></a> -->
     <input class="input__text" type="text" placeholder="Search" (input)="buscarxNombre()" [(ngModel)]="search">
-    <a routerLink="../cart">
+    <a class="btn__cart" routerLink="../cart">
         <i class="bi bi-cart2 btn__cart"></i>
     </a>
 </div>
+
 <p class="found text-center fw-bold h4 py-1 ">Found 3 results</p>
 
 <div *ngIf="mostrar">
@@ -33,15 +20,13 @@
         <a *ngFor="let c of cateList" class="btn__dishe" (click)="buscarxCategoria(c)">{{c}}</a>
     </div>
 </div>
-<!-- <ng-template #otro>
-    
-</ng-template> -->
-
 
 <div class="container__foods d-flex flex-wrap">
     <div *ngFor="let product of filteredProducts" class="container__food" (click)="selectProduct(product._id || '')">
         <img class="container__img" [src]="product.picture_url" alt="e">
-        <p class="text-center pt-4 pb-1 fw-bold">{{product.name | titlecase}}</p>
+        <p class="text-center product pt-4 pb-1 px-2 fw-bold">{{product.name | titlecase}}</p>
         <p class="text-center pt-2 money">{{product.price | currency}}</p>    
     </div>
 </div>
+
+

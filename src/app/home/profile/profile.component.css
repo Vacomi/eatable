@@ -49,7 +49,7 @@ h1{
 .btn__change:hover{
     font-weight: 600;
     transition: .3s;
-    font-size: .94rem;
+    font-size: .93rem;
 }
 .container__form{
     margin-top: .5rem;
