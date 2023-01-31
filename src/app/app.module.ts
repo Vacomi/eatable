@@ -16,6 +16,7 @@ import { HistoryComponent } from './home/history/history.component';
 import { httpInterceptorProviders } from './interceptors';
 import { ProductComponent } from './home/main/product/product.component';
 import { CartComponent } from './home/cart/cart.component';
+import { EatableComponent } from './inicio/eatable/eatable.component';
 
 @NgModule({
   declarations: [
@@ -30,6 +31,7 @@ import { CartComponent } from './home/cart/cart.component';
     HistoryComponent,
     ProductComponent,
     CartComponent,
+    EatableComponent,
 
   ],
   imports: [
