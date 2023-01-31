@@ -1,3 +1,29 @@
+
+.container__contain{
+    width: 340px;
+    margin: 0 auto;
+    padding: 2.7rem 3rem 0 3rem;
+    background-color: #f6f6f9;
+}
+
+i{
+    color: rgb(179, 176, 176);
+}
+.bi, .bx{
+    font-size: 1.4rem;
+}
+/* ICONOS MENU */
+
+.btn__icon{
+    cursor: pointer;
+}
+.btn__icon:hover{
+    transition: .3s;
+    transform: scale(1.27);
+}
+.btn--icon{  
+    color: #fa4a0c;
+} 
 .container__title{
     width: 100%;
     margin-bottom: 1rem;
@@ -14,13 +40,6 @@
     font-size: 1rem;
     color: #000;
 }
-a i::before {
-    font-size: 1rem;
-    font-weight: bold !important;
-    color: #000;
-}
-
-
 
 .btn__left:hover{
     transition: .3s;
@@ -53,6 +72,7 @@ a i::before {
     margin-bottom: .9rem;
 }
 .container__description{
+    background-color: #fff;
     padding: .8rem;
     border-radius: .8rem;
     margin-bottom: 2rem;
@@ -61,21 +81,30 @@ a i::before {
     color: #333333;
     font-weight: 700;
     margin-bottom: .4rem;
+    font-size: .9rem;
 }
 .description{
+    height: 81.02px;
+    overflow-y: scroll;
     text-align: justify;
     color: #333333;
     line-height: 17px;
     font-size: .8rem;
 }
+
+.description::-webkit-scrollbar{
+    width: 0;
+}
+
 /* boton login */
 
 .btn{
+    font-size: .8rem;
     color: #fff;
     background-color: #fa4a0c;
     border: none;
     width: 100%;
-    padding: 1.2rem 0;
+    padding: 1rem 0;
     border-radius: 1.5rem;
 }
 .btn:hover{
@@ -92,7 +121,13 @@ a i::before {
 /* Responsive */
 
   @media only screen and (min-width: 1200px) { 
-    
+    .container__contain{
+        width: 370px;
+    } 
+    .container__icon{
+        margin: .3rem 0;
+    }
+
     .container__img{
         display: block;
         margin: 0 auto;
@@ -100,13 +135,7 @@ a i::before {
         height: 190px;
     }
     .subtitle{
-        margin: 3.5rem 0 .8rem 0;
+        margin: 3.472rem 0 .8rem 0;
     }
 
-    .container__not{
-        margin: 6.7rem 0 16.6rem 0;
-    }        
-    .bi-cart2{
-        font-size: 5.7rem;
-    } 
 }
