@@ -1,8 +1,6 @@
-<section class="container-fluid vh-100 marco">
+<!-- <section class="container-fluid vh-100 marco">
 
     <div class="container__profile d-flex flex-column mt-4">
-        <!-- <div class="container__contain rounded-4"> -->
-
             <router-outlet></router-outlet>
 
             <div class="container__icon d-flex w-100 justify-content-between ps-4 pe-4 text-center align-items-center py-3" style="background-color: #ededed;">
@@ -14,7 +12,17 @@
                 <a routerLink="history" class="btn__icon"><i routerLinkActive="btn--icon" class='bx bx-history'></i></a>
             </div>
 
-        <!-- </div> -->
     </div>
     
-</section>
+</section> -->
+<div class="container__profile vh-100 bg-dark d-flex justify-content-center align-items-center">
+    <div class="container__contain rounded-4">
+        <router-outlet></router-outlet>
+        <div class="container__icon d-flex justify-content-between text-center align-items-center py-4">
+            <a routerLink="main" class="btn__icon"><i routerLinkActive="btn--icon" class="bi bi-house"></i></a>
+            <a routerLink="profile" class="btn__icon"><i routerLinkActive="btn--icon" class="bi bi-person"></i></a>
+            <a routerLink="history" class="btn__icon"><i routerLinkActive="btn--icon" class='bx bx-history'></i></a>
+        </div>
+    </div>
+</div>
+

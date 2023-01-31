@@ -38,15 +38,22 @@ h2{
     width: 7.3rem;
     padding: .5rem 0;
     border-radius: 0;
+    border: none;
 }
-.btn--login{  
-    border-bottom: 3px solid #fa4a0c;
-} 
-.btn:hover{
+/* .btn:hover{
     transition: .3s;
     transform: scale(1.1);
     border-bottom: 3px solid #fa4a0c;
+} */
+
+.btn--login{  
+    transition: 0;
+    border-bottom: 3px solid #fa4a0c;
 }
+.btn--login:active{ 
+    border-bottom: 3px solid #fa4a0c;
+}
+
 
 /* Responsive */
 
@@ -55,7 +62,7 @@ h2{
         font-size: 3rem;
     } 
   }
-  @media only screen and (min-width: 1200px) {
+@media only screen and (min-width: 1200px) {
     .container__titles{
         padding: 5.3rem 0 3.9rem 0;
     }

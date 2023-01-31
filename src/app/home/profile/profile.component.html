@@ -1,74 +1,89 @@
 
-<section class="card">
-    <article class="card-body">
+<section class="Card">
+    <article class="card-body p-0 m-0">
         
         <div class="container__nav">
             <div class="container__title">
-                <h5 class="text-center card-title fw-bold">My Profile</h5>
-                <a class="btn__left"><i class="bi bi-chevron-left" (click)="back()"></i></a>
+                <h1 class="text-center fw-bold text">My Profile</h1>
+                <a class="btn__left"><i class="fa-solid fa-chevron-left" (click)="back()"></i></a>
             </div>
         </div>
-
-        <aside *ngIf="update;else up">
-        <div class="container__subtitle d-flex justify-content-between">
-            <h2 class="subtitle">Personal details</h2>
-            <button class="btn__change" (click)="btnchange()">change</button>
-        </div>
-
-        <div class="container__form" >
-            <div class="container__data">
-                <input type="text" class="input_name fw-bold" disabled placeholder="sin nombre" [value]="user.name">
-                <div class="container__group">
-                    <input type="email" class="input__text" id="name" placeholder="sin correo" disabled [value]="user.email">
-                </div>
+        
+        <aside *ngIf="update ; else up">
             
-                <div class="container__group">
-                    <input type="number" class="input__text" id="email" placeholder="sin teléfono" disabled [value]="user.phone">
-                </div>
-
-                <div class="container__group">
-                    <input type="text" class="input__text" id="phone" placeholder="sin dirección" disabled [value]="user.address">
-                </div>
+            <div class="container__subtitle">
+                <h2 class="subtitle">Personal details</h2>
+                <button class="btn__change" (click)="btnchange()">change</button>
             </div>
 
-            <div class="">
-                <button (click)="logout()" class="btn__update">Logout</button>
-            </div>
-        </div>
-    </aside>
+            <div class="container__form" >
+                <div class="container__data">
+                    <p class="fw-bold pt-2 pb-1 name">{{user.name}}</p>
 
+                    <div class="container__group">
+                        <input type="email" class="input__text" id="name" placeholder="sin correo"  disabled [value]="user.email">
+                    </div>
+                    
+                    
+                    <div class="container__group">
+                        <input type="number" class="input__text" id="email" placeholder="sin teléfono" disabled [value]="user.phone">
+                    </div>
+        
+                    <div class="container__group">
+                        <input type="text" class="input__text input__text--calle" id="phone" placeholder="sin dirección" disabled [value]="user.address">
+                    </div>
+
+                </div>
+
+                <div class="container__history">
+                    <p class="fw-bolder history">History</p>
+                    <a class="btn__right"><i class="fa-solid fa-chevron-right"></i></a>
+                </div>
+
+                <div>
+                    <button (click)="logout()" class="btn__logout">Logout</button>
+                 </div>
+
+            </div>
+        </aside>
+
+    
     <!-- ACTUALIZADOR -->
         <ng-template #up>
-            <h2 class="subtitle">Update personal details</h2>
-            <!-- <form class="container__form" [formGroup]="updateForm" (ngSubmit)="onUpdate()"> -->
-            <form class="container__form">
-                <div class="container__data">
-                    <div class="mb-1 container__group">
-                        <input type="text" class="input__text" id="name" placeholder=" " [value]="user.name" #name>
-                        <label for="name" class="label">Name</label>
+            <h2 class="subtitle__update">Update personal details</h2>
+            <!-- <form class="container__form" [formGroup]="updateForm" (ngSubmit)="onUpdate()">-->
+            <form class="container__form__update">
+                <div class="container__data__update">
+                    <div class="mb-1 container__group__update">
+                        <label for="name" class="label__update">Name</label>
+                        <input type="text" class="input__text__update" id="name" placeholder=""                 [value]="user.name" #name>
                     </div>
-                
-                    <div class="mb-1 container__group">
-                        <input type="email" class="input__text" id="email" placeholder=" "name="email" [value]="user.email" #email>
-                        <label for="email" class="label">Email</label>
+                    
+                    <div class="mb-1 container__group__update">
+                        <label for="email" class="label__update">Email</label>
+                        <input type="email" class="input__text__update" id="email"placeholder=""name="email" [value]="user.email" #email>
+                    </div>
+                   
+                    
+                    <div class="mb-1 container__group__update">
+                        <label for="phone" class="label__update">Phone</label>
+                        <input type="number" class="input__text__update input__text__update--phone" id="phone" placeholder=" " [value]="user.phone" #phone>
+                    </div>
+
+                    <div class="mb-1 container__group__update">
+                        <label for="address" class="label__update">Address</label>
+                        <input type="text" class="input__text__update" id="address" placeholder=" "[value]="user.address" #address>
                     </div>
             
-                    <div class="mb-1 container__group">
-                        <input type="number" class="input__text" id="phone" placeholder=" " [value]="user.phone" #phone>
-                        <label for="phone" class="label">Phone</label>
-                    </div>
-            
-                    <div class="mb-1 container__group">
-                        <input type="text" class="input__text input__address" id="address" placeholder=" "[value]="user.address" #address>
-                        <label for="address" class="label">Address</label>
-                    </div>
                 </div>
             
                 <div class="">
                     <button type="button" class="btn__update" (click)="updateUser(name.value, email.value, phone.value, address.value)">Update</button>
-                 </div>
+                </div>
             </form>
         </ng-template>
 
 </article>
 </section>
+
+                
