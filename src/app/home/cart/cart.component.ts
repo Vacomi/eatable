@@ -4,6 +4,9 @@ import { Location } from '@angular/common';
 import { CarritoService } from 'src/app/services/carrito.service';
 import { SessionService } from 'src/app/services/session.service';
 import { User } from 'src/app/Models/user.models';
+import { Router } from '@angular/router';
+import { OrdersService } from 'src/app/services/orders.service';
+import { Order } from 'src/app/Models/Orders.models';
 
 @Component({
   selector: 'app-cart',
@@ -25,7 +28,9 @@ export class CartComponent implements OnInit {
   constructor (
     private _scart : CarritoService,
     private location: Location,
-    private _suser : SessionService
+    private _suser : SessionService,
+    private _sorder : OrdersService,
+    private router : Router
   ) {}
   ngOnInit(): void {
     this.productList = this._scart.getProductCart();
@@ -61,6 +66,22 @@ export class CartComponent implements OnInit {
       
     }
     this._scart.updateCart(this.productList)
+  }
+
+  confirmarPedido() {
+    let fecha = new Date();
+    let pedido: Order = {
+      delivery_address : this.user.address || '',
+      date_order: fecha,
+      user_id: sessionStorage.getItem('id') || '',
+      items : JSON.parse(localStorage.getItem('cart') || '')
+    }
+
+    
+    this._sorder.createOrder(pedido).subscribe( orders => {
+      console.log(orders)
+    })
+    this.router.navigate(['/home/history']);
   }
 
   checkout() {

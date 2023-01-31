@@ -1,0 +1,83 @@
+.container__title{
+    position: relative;
+    margin-bottom: 1.4rem;
+}
+/* Flecha izquierda */
+.btn__left{
+    cursor: pointer;
+    border: none;
+    background-color: transparent;
+    padding: 0 1rem 0 0;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+.fa-chevron-left{
+    font-size: 1rem;
+    color: #000;
+}
+
+.btn__left:hover{
+    transition: .3s;
+    transform: scale(1.2);
+}
+
+
+.container__form{
+    margin-bottom: 9.1rem;
+}
+.container__data{
+    background-color: #fff;
+    position: relative;
+    font-size: .74rem;
+    border-radius: .8rem;
+    padding: 1.4rem 1.3rem 1.5rem 1.3rem;
+    margin-bottom: 1rem;
+    box-shadow: 0px 10px 15px -3px rgba(136, 135, 135, 0.1);
+}
+.container__item{
+    padding: .8rem 0 0 0;
+}
+.dollar{
+    color: #fa4a0c;
+}
+.btn{
+    padding: 0;
+    margin: 0;
+    border: none;
+    border-radius: 0;
+}
+.btn:hover{
+    transition: .3s;
+    transform: scale(1.2);
+}
+.arrow{
+    position: absolute;
+    right: 12px;
+    bottom: 0;
+}
+
+.container__dataV2{
+    position: relative;
+    font-size: .74rem;
+    background-color: #fff;
+    border-radius: .8rem;
+    padding: 1.4rem 1.3rem 1rem 1.3rem;
+    margin-bottom: 3rem;
+    box-shadow: 0px 10px 15px -3px rgba(136, 135, 135, 0.1);
+}
+
+.container__itemV2{
+    padding: .8rem 0;
+}
+.arrow-up{
+    position: absolute;
+    right: 12px;
+    bottom: 0;
+}
+/* Responsive */
+  @media only screen and (min-width: 1200px) {
+    .container__form{
+        margin-bottom: 13.2rem;
+    }
+}

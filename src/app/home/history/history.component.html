@@ -1,0 +1,49 @@
+<<<<<<< HEAD
+=======
+<div class="container__nav">
+    <div class="container__title position-relative mb-4">
+            <a class="btn__left position-absolute"><i class="fa-solid fa-chevron-left" (click)="back()"></i></a>
+            <h2 class="text-center fw-bold text">History</h2>
+    </div>
+</div>
+
+
+<div class="container__form">
+    <!-- <div class="container__data">
+        <h3>Wed, Mar 20, 2021</h3>
+        <div class="container__item d-flex justify-content-between">
+            <p>3 items</p>
+            <span class="dollar">$64.90</span>
+        </div>
+
+        <div class="arrow text-end">
+            <button class="btn">
+                <i class="fa-solid fa-chevron-down"></i>
+            </button>
+        </div>
+    </div> -->
+
+    <div *ngFor="let order of copia2" class="container__dataV2 bg-warning">
+        <h3>{{order.date_order | date: 'fullDate'}}</h3>
+        <div class="container__itemV2 d-flex justify-content-between">
+            <p>{{order.items.length}} items</p>
+            <span class="dollar">{{getTotal(order._id) | currency}}</span>
+        </div>
+        <h3 class="subtitle fw-bold py-1">Order</h3>
+        <div class="container__order d-flex justify-content-between" *ngFor="let p of order.items">
+            <p class="py-1">{{p.quantity}} - {{getName(p._id)}}</p>
+            <span class="price">{{(getPrecio(p._id) * p.quantity) | currency}}</span>
+        </div>
+
+        <h3 class="subtitle fw-bold mb-2 mt-3">Delivery</h3>
+        <p class="pb-3">{{order.delivery_address}}</p>
+
+        <div class="arrow-up text-end">
+            <button class="btn">
+                <i class="fa-solid fa-chevron-up"></i>
+            </button>
+        </div>
+    </div>
+    
+</div>
+>>>>>>> 57b7bcae35612b6d75681cbf764aaff553761483
