@@ -1,0 +1,86 @@
+.container-fluid{
+    background-image: url(../../../assets/loading.png);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+}
+.container__circle{
+    position: relative;
+    background-color: #fff;
+    width: 230px;
+    height: 230px;
+    border-radius: 50%;
+}
+ h1{
+    font-family: 'Flavors', cursive;
+    letter-spacing: 2px;
+    font-weight: 300;
+    color: #fa4a0c;
+    font-size: 2.7rem;
+    padding-bottom: .3rem;
+} 
+h2{
+    color: #fa622d;
+    font-size: .6rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+
+/* Loading */
+.loading{
+    position: absolute;
+    left: 6.1rem;
+    bottom: 2.7rem;
+}
+.loader {
+    width: 28px;
+    height: 28px;
+    border: 2px solid #fa4a0c;
+    border-bottom-color: transparent;
+    border-radius: 50%;
+    display: inline-block;
+    box-sizing: border-box;
+    animation: rotation 1s linear infinite;
+}
+
+    @keyframes rotation {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+} 
+@media only screen and (min-width: 500px) {
+    .container-fluid{
+        background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../../../assets/loading-desktop.jpg");
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+}
+@media only screen and (min-width: 1200px) {
+    h1{
+        font-size: 3rem; 
+    } 
+    h2{
+        font-size: .8rem;
+    }
+    .container__circle{
+        width: 270px;
+        height: 270px;
+    }
+    .loading{
+        position: absolute;
+        left: 7.1rem;
+        bottom: 2.4rem;
+    }
+    .loader {
+        width: 35px;
+        height: 35px;
+        border: 4px solid #fa4a0c;
+        border-bottom-color: transparent;
+    }
+
+}
