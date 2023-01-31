@@ -8,12 +8,14 @@ export class CarritoService {
 
   constructor() { }
 
-  getProductCart(): Product[] {
+  getProductCart(): Product[] | any{
     let productsCart: Product[] =
      JSON.parse(localStorage.getItem('cart')!)
-    console.log(productsCart);
-    
-    return productsCart;
+
+    if(productsCart) {
+      return productsCart;
+    }
+
   }
 
   addProductCart(plato: Product){

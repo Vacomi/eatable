@@ -21,11 +21,7 @@ export class ProfileComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    console.log('estoy dentro del OnInit');
-    
     this.service.showuser(sessionStorage.getItem("id")).subscribe( (data: any) => {
-      console.log(data);
-      
       if(data.name) {  this.user.name = data.name }
       if(data.email) {  this.user.email = data.email }
       if(data.phone) {  this.user.phone = data.phone }
@@ -41,7 +37,6 @@ export class ProfileComponent implements OnInit {
   }
   btnchange() {
     this.update = !this.update;
-    console.log(this.update);
   } 
 
   updateUser(n:string, e:string, p:string, a:string){

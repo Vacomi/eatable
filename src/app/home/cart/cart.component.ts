@@ -25,6 +25,7 @@ export class CartComponent implements OnInit {
     phone : '',
     address : '',
   }
+
   constructor (
     private _scart : CarritoService,
     private location: Location,
@@ -34,7 +35,7 @@ export class CartComponent implements OnInit {
   ) {}
   ngOnInit(): void {
     this.productList = this._scart.getProductCart();
-    console.log(this.productList);
+
     this.total = this._scart.getTotal();
     
     this._suser.showuser(this.id).subscribe( (user : any) => {
@@ -44,7 +45,7 @@ export class CartComponent implements OnInit {
     })
 
   }
-
+  
   reduceQuantity(plato: Product){
     if (plato.quantity){
       plato.quantity -= 1
@@ -69,6 +70,9 @@ export class CartComponent implements OnInit {
   }
 
   confirmarPedido() {
+    if(!this.user.address) {
+      return alert('Tiene que tener una Direccion para continuar')
+    }
     let fecha = new Date();
     let pedido: Order = {
       delivery_address : this.user.address || '',
@@ -81,6 +85,7 @@ export class CartComponent implements OnInit {
     this._sorder.createOrder(pedido).subscribe( orders => {
       console.log(orders)
     })
+    localStorage.setItem('cart', JSON.stringify([]));
     this.router.navigate(['/home/history']);
   }
 

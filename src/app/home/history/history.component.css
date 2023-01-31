@@ -81,3 +81,57 @@
         margin-bottom: 13.2rem;
     }
 }
+
+
+/* css no history */
+.container__title{
+    position: relative;
+}
+
+.container__noItem{
+    height: 100%;
+}
+.container__not{
+    margin: 7rem 0 14.8rem 0;
+}
+.subtitle{
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+.bi-calendar2-minus{
+    display: block;
+    color: #c7c6c6;
+    font-size: 5rem;
+    padding: .8rem 0;
+    margin-bottom: .2rem;
+}
+
+/* Flecha izquierda */
+.btn__left{
+    cursor: pointer;
+    border: none;
+    background-color: transparent;
+    padding: 0 1rem 0 0;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+.fa-chevron-left{
+    font-size: 1rem;
+    color: #000;
+}
+
+.btn__left:hover{
+    transition: .3s;
+    transform: scale(1.2);
+}
+
+/* Responsive */
+  @media only screen and (min-width: 1200px) {   
+    .container__not{
+        margin: 8.5rem 0 17rem 0;
+    }        
+    .bi-cart2{
+        font-size: 5.7rem;
+    } 
+}

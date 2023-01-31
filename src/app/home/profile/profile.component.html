@@ -5,7 +5,7 @@
         <div class="container__nav">
             <div class="container__title">
                 <h1 class="text-center fw-bold text">My Profile</h1>
-                <a class="btn__left"><i class="fa-solid fa-chevron-left" (click)="back()"></i></a>
+                <a class="btn__left" (click)="back()"><i class="fa-solid fa-chevron-left" ></i></a>
             </div>
         </div>
         
@@ -35,7 +35,7 @@
 
                 </div>
 
-                <div class="container__history">
+                <div class="container__history" routerLink="/home/history">
                     <p class="fw-bolder history">History</p>
                     <a class="btn__right"><i class="fa-solid fa-chevron-right"></i></a>
                 </div>

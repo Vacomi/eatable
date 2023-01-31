@@ -6,7 +6,7 @@
 </div>
 
 
-<div class="container__form">
+<div class="container__form" *ngIf="copia2.length > 0; else nohay">
     <!-- <div class="container__data">
         <h3>Wed, Mar 20, 2021</h3>
         <div class="container__item d-flex justify-content-between">
@@ -44,3 +44,12 @@
     </div>
     
 </div>
+
+<ng-template #nohay>
+    <div class="container__noItem d-flex justify-content-center align-items-center">
+        <div class="container__not text-center">
+            <i class="bi bi-calendar2-minus"></i>
+            <h2 class="subtitle">No history yet</h2>
+        </div>
+    </div>
+</ng-template>

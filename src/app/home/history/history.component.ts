@@ -13,7 +13,6 @@ import { Product } from 'src/app/Models/Producto.model';
 })
 
 export class HistoryComponent implements OnInit {
-  
   plato: Product = {
     _id: "",
     name: "",
@@ -22,6 +21,7 @@ export class HistoryComponent implements OnInit {
     description: "",
     picture_url: "",
   };
+  ishistory: boolean = false;
   ide = sessionStorage.getItem('id');
   ordenes:any = [
   ];
