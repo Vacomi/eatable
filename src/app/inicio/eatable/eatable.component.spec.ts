@@ -20,4 +20,12 @@ describe('EatableComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('should render a message with value "Eatable"', () => {
+    const fixture=TestBed.createComponent(EatableComponent);
+    fixture.detectChanges();
+    const compiled= fixture.nativeElement;
+    expect(compiled.querySelector('h1').textContent).toContain('Eatable');
+  });
+
 });
