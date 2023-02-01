@@ -23,6 +23,10 @@ export class HistoryComponent implements OnInit {
   };
   ishistory: boolean = false;
   ide = sessionStorage.getItem('id');
+
+  clickin = false;
+  clickorder = '';
+  
   ordenes:any = [
   ];
   copia2: Order[] = []
@@ -66,6 +70,10 @@ export class HistoryComponent implements OnInit {
     return  obj.price;  
   }
 
+  pulsado(id:any) {
+    this.clickin = !this.clickin;
+    this.clickorder = id;
+  }
   back() {
     this.lol.back();
   }

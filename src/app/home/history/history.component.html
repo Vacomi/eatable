@@ -7,26 +7,28 @@
 
 
 <div class="container__form" *ngIf="copia2.length > 0; else nohay">
-    <!-- <div class="container__data">
-        <h3>Wed, Mar 20, 2021</h3>
-        <div class="container__item d-flex justify-content-between">
-            <p>3 items</p>
-            <span class="dollar">$64.90</span>
-        </div>
 
-        <div class="arrow text-end">
-            <button class="btn">
-                <i class="fa-solid fa-chevron-down"></i>
-            </button>
-        </div>
-    </div> -->
 
-    <div *ngFor="let order of copia2" class="container__dataV2 bg-warning">
-        <h3>{{order.date_order | date: 'fullDate'}}</h3>
-        <div class="container__itemV2 d-flex justify-content-between">
-            <p>{{order.items.length}} items</p>
-            <span class="dollar">{{getTotal(order._id) | currency}}</span>
-        </div>
+    <details *ngFor="let order of copia2" class="container__dataV2" [open]="clickin && (clickorder === order._id)">
+        <summary >
+            <div class="fila1 d-flex justify-content-between">
+                <h3>{{order.date_order | date: 'fullDate'}}</h3>
+   
+                <button class="btn">
+                    <i class="fa-solid"
+                    [ngClass]="clickin && (clickorder === order._id) ? 'fa-chevron-up' : 'fa-chevron-down' " (click)="pulsado(order._id)"></i>
+                </button> 
+
+            </div>
+            
+            <div class="container__itemV2 d-flex justify-content-between">
+                <p>{{order.items.length}} items</p>
+                <span class="dollar">{{getTotal(order._id) | currency}}</span>
+            </div>
+
+        </summary>
+
+
         <h3 class="subtitle fw-bold py-1">Order</h3>
         <div class="container__order d-flex justify-content-between" *ngFor="let p of order.items">
             <p class="py-1">{{p.quantity}} - {{getName(p._id)}}</p>
@@ -36,15 +38,10 @@
         <h3 class="subtitle fw-bold mb-2 mt-3">Delivery</h3>
         <p class="pb-3">{{order.delivery_address}}</p>
 
-        <div class="arrow-up text-end">
-            <button class="btn">
-                <i class="fa-solid fa-chevron-up"></i>
-            </button>
-        </div>
-    </div>
-    
-</div>
+    </details>
 
+
+</div>
 <ng-template #nohay>
     <div class="container__noItem d-flex justify-content-center align-items-center">
         <div class="container__not text-center">

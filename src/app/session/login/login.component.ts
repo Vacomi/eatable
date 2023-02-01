@@ -33,8 +33,11 @@ export class LoginComponent {
         console.log(data);
 
         this.router.navigate(['/home'])
+
       } else {
-        alert('Su correo o contraseña son incorrectas')
+
+        alert('Su correo o contraseña son incorrectas');
+
       }
     })
   }

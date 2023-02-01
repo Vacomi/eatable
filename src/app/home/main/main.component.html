@@ -23,7 +23,7 @@
 </ng-template> -->
 
 
-<div *ngIf="mostrar === true" class="container__foods d-flex flex-wrap">
+<div *ngIf="filteredProducts.length > 0" class="container__foods d-flex flex-wrap">
     <div *ngFor="let product of filteredProducts" class="container__food" (click)="selectProduct(product._id || '')">
         <img class="container__img" [src]="product.picture_url" alt="e">
         <p class="text-center pt-4 pb-1 fw-bold">{{product.name | titlecase}}</p>
